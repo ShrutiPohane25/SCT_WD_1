@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adopto - Home</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+
+
+  <style>
+    .hero {
+      background: url('images/og.png') no-repeat center center;
+      background-size:cover;
+      height: 90vh; /* full screen height */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      color: white;
+      filter: brightness(1.9); /* Increase brightness */
+      
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.4); /* dark overlay */
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #22190f;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      color: black;
+    }
+
+    .hero-content h1, .hero-content p, .btn {
+    animation: slideFade 1s ease forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+  .hero-content h1 { animation-delay: 0.2s; }
+  .hero-content p { animation-delay: 0.4s; }
+  .btn { animation-delay: 0.6s; }
+
+@keyframes slideFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Button */ 
+.cssbuttons-io-button {
+  background-image: linear-gradient(19deg, #321E1E 10%, #7E6363 90%);
+  color: black;
+  font-family: inherit;
+  padding: 0.35em;
+  padding-left: 1.2em;
+  font-size: 17px;
+  border-radius: 10em;
+  border: none;
+  letter-spacing: 0.05em; 
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  height: 2.8em;
+  padding-right: 3.3em;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-left: 9rem;
+  box-shadow: 0 0 1.6em rgba(183, 33, 255,0.3),0 0 1.6em hsla(191, 98%, 56%, 0.3);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.cssbuttons-io-button .icon {
+  background: #e6ccb2;
+  margin-left: 1em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 10em;
+  right: 0.3em;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.cssbuttons-io-button:hover .icon {
+  width: calc(100% - 0.6em);
+}
+
+.cssbuttons-io-button .icon svg {
+  width: 1.1em;
+  transition: transform 0.3s;
+  color: #B721FF;
+}
+
+.cssbuttons-io-button:hover .icon svg {
+  transform: translateX(0.1em);
+}
+
+.cssbuttons-io-button:active .icon {
+  transform: scale(0.9);
+}
+
+.adoption-facts {
+  background-color: #fff0ec;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 800px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.adoption-facts h3 {
+  font-size: 1.8rem;
+  color: #22190f;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.facts-list {
+  list-style: none;
+  padding-left: 0;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.7;
+}
+
+.facts-list li {
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.facts-list li::before {
+  content: "✔️";
+  position: absolute;
+  left: 0;
+}
+
+
+    @media screen and (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1.1rem;
+      }
+      main {
+        flex-direction: column;
+        text-align: center;
+      }
+      main .text {
+        padding: 0;
+      }
+    }
+
+
+
+    /* Cat */
+.cat-container {
+  position: fixed;
+  bottom: -150px;
+  left: 0;
+  z-index: 1000;
+  animation: popBounce 2s ease-out forwards;
+}
+
+.black-cat {
+  width: 250px;
+  animation: tailWiggle 2s ease-in-out 2s infinite, scalePulse 2s ease-in-out 2s infinite;
+  transform-origin: bottom left;
+}
+
+/* Pop in with bounce */
+@keyframes popBounce {
+  0% {
+    bottom: -150px;
+    opacity: 0;
+  }
+  60% {
+    bottom: 20px;
+    opacity: 1;
+  }
+  80% {
+    bottom: -10px;
+  }
+  100% {
+    bottom: 0px;
+  }
+}
+
+/* Wiggle effect (tail or slight rotate) */
+@keyframes tailWiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(3deg);
+  }
+  50% {
+    transform: rotate(-3deg);
+  }
+  75% {
+    transform: rotate(2deg);
+  }
+}
+
+/* Pulse for cuteness */
+@keyframes scalePulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+/* About Section */
+.adoption-heading {
+  font-size: 2.25rem;
+  color: #7e3f3f;
+  margin: 3rem 0 1.5rem 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+.adoption-facts {
+  list-style: none;
+  font-size: 1.25rem;
+  line-height: 2;
+  color: #333;
+  text-align: left;
+  margin: 0 auto 4rem auto;
+  max-width: 800px;
+  padding: 0 1rem;
+  background-color: #ffffffce;
+}
+
+.adoption-facts li {
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.adoption-facts li::before {
+  content:"";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.2rem;
+  color: #7e3f3f;
+}
+
+ /* Pet Card */
+.pet-gallery {
+  padding: 2rem;
+  background-color: #FFF2D7;
+}
+
+.pet-gallery h2 {
+  font-size: 2rem;
+  color: #7e3f3f;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.pet-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.pet-card {
+  background-color: #ffffffce;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 1rem;
+  max-width: 250px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+.pet-card:nth-child(1) { animation-delay: 0.4s; }
+.pet-card:nth-child(2) { animation-delay: 0.6s; }
+.pet-card:nth-child(3) { animation-delay: 0.8s; }
+.pet-card:nth-child(4) { animation-delay: 1s; }
+.pet-card:nth-child(5) { animation-delay: 1.2s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+.pet-card img:hover {
+  transform: scale(1.5); /* image-only pop effect */
+}
+
+.pet-card img {
+  width: 60%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.pet-card h3 {
+  margin: 0.8rem 0 0.5rem;
+  color:#7e3f3f;
+
+.pet-card p {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Modal styling */
+ .modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: auto;
+  padding: 20px;
+  width: 70%;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.modal-content p {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: red;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+ <header class="navbar-container">
+    <a href="index.html" class="logo">
+     
+      <span>🐾 Adopto</span>
+    </a>
+    <nav>
+      <ul class="navbar">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="aboutus.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul> 
+    </nav>
+  </header>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to Adopto 🦴</h1>
+      <p>Your new best friend is waiting for you!</p>
+      
+    <button class="cssbuttons-io-button" onclick="location.href='contact.html'"> 
+      Get started
+      <div class="icon">
+        <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor">
+          </path>
+        </svg>
+      </div>
+    </button>
+    </div>
+
+    <div class="cat-container">
+      <img src="images/blackcat2.png" alt="Black Cat" class="black-cat" />
+    </div>
+
+  </section>
+
+  <!-- About Section -->
+  <h3 class="adoption-heading">Why Adopt? </h3>
+<ul class="adoption-facts">
+  <li>✔️ You’re saving a life and giving a pet a second chance.</li>
+  <li>✔️ Adoption is more affordable than buying a pet.</li>
+  <li>✔️ Many pets are already trained and vaccinated.</li>
+  <li>✔️ You help stop unethical breeding practices.</li>
+  <li>✔️ Adopted pets give lifelong love and gratitude.</li>
+  <li>✔️ You free up shelter space for another animal in need.</li>
+  <li>✔️ Pets improve mental well-being and reduce stress.</li>
+</ul>
+
+<h3 class="adoption-heading">Fun Facts About Pets! </h3>
+<ul class="adoption-facts">
+  <li>✔️ Dogs' sense of smell is 40x better than humans.</li>
+  <li>✔️ Cats sleep for about 70% of their lives.</li>
+  <li>✔️ Goldfish have a longer memory than you think .</li>
+  <li>✔️ Dogs can understand up to 250 words and gestures.</li>
+  <li>✔️ Dogs’ noses are as unique as human fingerprints.</li>
+  <li>✔️ Parrots can live over 60 years.</li>
+  <li>✔️ Rabbits can be litter trained just like cats.</li>
+</ul>
+
+  <div class="pet-gallery">
+      <h2>Browse Our Pets</h2>
+      <div class="pet-cards">
+    
+        <!-- Pet Card 1 -->
+        <div class="pet-card" onclick="openModal('modal1')">
+          <h3>CAT</h3>
+          <img src="images/catoutline.jpg" alt="Cats"><br>
+        </div>
+    
+        <!-- Pet Card 2-->
+        <div class="pet-card" onclick="openModal('modal2')">
+          <h3>DOG</h3>
+          <img src="images/dogoutline.jpg" alt="Dogs"><br>
+        </div>
+
+        <!-- Pet Card 3-->
+        <div class="pet-card" onclick="openModal('modal3')">
+          <h3>RABBIT</h3>
+          <img src="images/rabbitoutline.jpg" alt="Rabbits"><br>
+        </div>
+
+        <!-- pet Card 4-->
+        <div class="pet-card" onclick="openModal('modal5')">
+          <h3>OTHERS..</h3>
+          <img src="images/other.avif" alt="Other"><br>  
+        </div>
+
+        </div>
+      </div>
+    </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-section about">
+      <h3>About Adopto</h3>
+      <p>Adopto is dedicated to helping pets find loving homes and connecting volunteers with opportunities to make a difference.</p>
+    </div>
+
+    <div class="footer-section contact">
+      <h3>Contact</h3>
+      <p>Email: adoptopetadoption@gmail.com</p>
+      <p>Phone: +91-9876543210</p>
+    </div>
+
+    <div class="footer-section links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutus.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section social">
+      <h3>Follow Us</h3>
+      <a href="#"><img src="images/facebook.png" alt="Facebook" /></a>
+      <a href="#"><img src="images/instagram.png" alt="Instagram" /></a>
+      <a href="#"><img src="images/twitter.png" alt="Twitter" /></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Adopto. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

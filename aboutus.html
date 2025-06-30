@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About - Adopto</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+  /* General Reset for body and spacing */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+  
+body {
+     display: flex;
+      flex-direction: column;
+      background-image: url('images/about.png');
+      background-size:cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-family: Arial, sans-serif;
+}
+
+.about-section {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background:white; 
+  color: #333;
+  margin-bottom: 3rem; 
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+}
+
+.about-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #7e3f3f;
+  border-bottom: 2px solid  #22190f;
+  padding-bottom: 0.5rem;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  
+}
+
+
+/* Gallery container for separation */
+.gallery-container {
+  max-width: 1000px;
+  margin: 0 auto 6rem auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Gallery grid styling (already good) */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 0;
+}
+
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Staggered animation delays */
+.gallery-item:nth-child(1) { animation-delay: 0.2s; }
+.gallery-item:nth-child(2) { animation-delay: 0.4s; }
+.gallery-item:nth-child(3) { animation-delay: 0.6s; }
+.gallery-item:nth-child(4) { animation-delay: 0.8s; }
+.gallery-item:nth-child(5) { animation-delay: 1s; }
+.gallery-item:nth-child(6) { animation-delay: 1.2s; }
+/* Add more if you have more images */
+
+.gallery-item:hover {
+  transform: scale(1.5) translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.5);
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Layouts */
+@media (max-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+  <header class="navbar-container">
+    <a href="index.html" class="logo">
+     
+      <span>🐾 Adopto</span>
+    </a>
+    <nav>
+      <ul class="navbar">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="aboutus.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul> 
+    </nav>
+  </header>
+
+<main class="about-section">
+  <h1>About Adopto</h1>
+  <p>
+    <strong>Adopto</strong> is a thoughtfully developed pet adoption website, with a shared passion 
+    for technology and animal welfare. Our mission is to connect loving pets with responsible adopters through a platform that is 
+    simple, user-friendly, and trustworthy.
+  </p>
+  <p>
+    As student, I saw an opportunity to use web development skills to support a meaningful cause. Every feature on Adopto is 
+    built with care, aiming to make the adoption process easier, more accessible, and more compassionate.
+  </p>
+  <p>
+    Whether you're looking to welcome a new furry friend into your home or you're just exploring pet adoption, we’re excited to 
+    have you here. Thank you for supporting and making a difference in the lives of animals. 🐾
+  </p>
+</main>
+
+
+<div class="gallery-container">
+  <h2 style="text-align: center; color: #553729;">Meet Our Lovely Friends</h2>
+  <div class="gallery">
+    <div class="gallery-item"><img src="images/cat1.jpeg" alt="Cat 1"></div>
+    <div class="gallery-item"><img src="images/cat2.jpeg" alt="Cat 2"></div>
+    <div class="gallery-item"><img src="images/dog1.jpeg" alt="Dog 1"></div>
+    <div class="gallery-item"><img src="images/dog2.jpeg" alt="Dog 2"></div>
+    <div class="gallery-item"><img src="images/dog3.jpeg" alt="Dog 3"></div>
+    <div class="gallery-item"><img src="images/dog4.jpeg" alt="Dog 4"></div>
+    <div class="gallery-item"><img src="images/dog5.jpeg" alt="Dog 5"></div>
+    <div class="gallery-item"><img src="images/rabbit1.jpeg" alt="Rabbit 1"></div>
+    <div class="gallery-item"><img src="images/rabbit2.jpeg" alt="Rabbit 2"></div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-section about">
+      <h3>About Adopto</h3>
+      <p>Adopto is dedicated to helping pets find loving homes and connecting volunteers with opportunities to make a difference.</p>
+    </div>
+
+    <div class="footer-section contact">
+      <h3>Contact</h3>
+      <p>Email: adoptopetadoption@gmail.com</p>
+      <p>Phone: +91-9876543210</p>
+    </div>
+
+    <div class="footer-section links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutus.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section social">
+      <h3>Follow Us</h3>
+      <a href="#"><img src="images/facebook.png" alt="Facebook" /></a>
+      <a href="#"><img src="images/instagram.png" alt="Instagram" /></a>
+      <a href="#"><img src="images/twitter.png" alt="Twitter" /></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Adopto. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

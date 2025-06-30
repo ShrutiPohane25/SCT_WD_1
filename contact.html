@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact - Adopto</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+
+
+  <style>
+
+  html{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+    body {
+      display: flex;
+      flex-direction: column;
+      background-image: url('images/contact.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-family: Arial, sans-serif;
+    }
+
+    @keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+    main {
+      flex: 1;
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(5px);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      animation: fadeInSlideUp 1s ease-out;
+    }
+
+    main h1 {
+      color: #7e3f3f;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid  #22190f;
+      font-size: 2.5rem;
+    }
+
+    main p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input, textarea {
+      padding: 0.8rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #22190f;
+      color: white;
+      border: none;
+      padding: 0.8rem;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #d35400;
+    }
+
+    #contactDetails {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      border-top: 1px solid #ccc;
+      display: none; /* hidden initially */
+    }
+
+    .contact-info h3 {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 1.7rem;
+      line-height: 1.6;
+      color:#7e3f3f;
+    }
+
+    .contact-info {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 1.3rem;
+      line-height: 1.6;
+      color:black;
+    }
+
+    /* Basic responsiveness */
+    @media (max-width: 600px) {
+      main {
+        margin: 1rem;
+        padding: 1rem;
+      }
+
+      input, textarea {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+ <header class="navbar-container">
+    <a href="index.html" class="logo">
+     
+      <span>🐾 Adopto</span>
+    </a>
+    <nav>
+      <ul class="navbar">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="aboutus.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul> 
+    </nav>
+  </header>
+
+  <main>
+    <h1>Contact Us</h1>
+    <p>Want to adopt a pet or become a volunteer? Reach out to us!</p>
+    <form id="contactForm">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+       <input type="phone" placeholder="Your Phone Number" required />
+       <input type="text" placeholder="Desired Pet" required/>
+      
+      <button type="submit">Send</button>
+    </form>
+
+    <div id="contactDetails">
+      <h3>Thank you for reaching out! We'll Contact You.</h3>
+      <p>Email: <strong>adoptopetadoption@gmail.com</strong></p>
+      <p>Call: <strong>+91-9876543210</strong></p>
+    </div>
+    </main>
+
+    <div class="contact-info">
+      <h3>Our Office</h3>
+      <p><strong>Address:</strong> 123 Pet Street, HappyTown, India</p>
+      <p><strong>Hours:</strong> Mon – Fri, 9 AM – 6 PM</p><br>
+    </div>  
+
+
+  <footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-section about">
+      <h3>About Adopto</h3>
+      <p>Adopto is dedicated to helping pets find loving homes and connecting volunteers with opportunities to make a difference.</p>
+    </div>
+
+    <div class="footer-section contact">
+      <h3>Contact</h3>
+      <p>Email: adoptopetadoption@gmail.com</p>
+      <p>Phone: +91-9876543210</p>
+    </div>
+
+    <div class="footer-section links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutus.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section social">
+      <h3>Follow Us</h3>
+      <a href="#"><img src="images/facebook.png" alt="Facebook" /></a>
+      <a href="#"><img src="images/instagram.png" alt="Instagram" /></a>
+      <a href="#"><img src="images/twitter.png" alt="Twitter" /></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Adopto. All rights reserved.</p>
+  </div>
+</footer>
+
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent actual form submission
+      document.getElementById("contactDetails").style.display = "block";
+    });
+  </script>
+</body>
+</html>
